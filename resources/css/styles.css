@@ -10,3 +10,13 @@ tbody > tr > td.transparent {
 .table-bordered {
   border-right: none;
 }
+
+.edit {
+  position: absolute;
+  right: 0;
+}
+
+.jumbotron {
+  background-color: #337ab7;
+  color: #fff;
+}

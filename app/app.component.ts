@@ -3,10 +3,12 @@ import { Entry } from './entry.model'
 @Component({
   selector: 'app-root',
   template: `
-  <div class="container">
+  <div class="container-fluid">
     <div class="jumbotron">
       <h1 class="text-center">Caloreally? You're gonna eat that?</h1>
     </div>
+  </div>
+  <div class="container">
     <entry-list [entries]="entries"></entry-list>
     <new-entry [entries]="entries"></new-entry>
   </div>

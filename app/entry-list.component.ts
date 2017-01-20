@@ -5,37 +5,41 @@ import { Entry } from './entry.model';
   selector: 'entry-list',
   template: `
   <div class="row">
-    <select class="form-control" (change)='filter($event.target.value)'>
-      <option value="all" selected>All</option>
-      <option value="low">Low</option>
-      <option value="high">High</option>
-    </select>
+    <div class="col-sm-12">
+      <select class="form-control" (change)='filter($event.target.value)'>
+        <option value="all" selected>All</option>
+        <option value="low">Low</option>
+        <option value="high">High</option>
+      </select>
+    </div>
   </div>
   <div class="row">
-    <div class="entries">
-      <table class="table table-bordered">
-        <thead>
-        <tr>
-          <th>Name</th>
-          <th>Details</th>
-          <th>Calories</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let entry of entries | calories:level">
-          <td>{{entry.name}}</td>
-          <td>{{entry.details}}</td>
-          <td>{{entry.calories}}</td>
-          <td class="transparent"><a href="#" (click)="editEntry(entry)"><i class="fa fa-pencil"></i></a></td>
-        </tr>
-        <tr class="warning">
-          <td colspan="2"><strong>Total</strong></td>
-          <td>{{sum(entries)}}</td>
-        </tr>
-        </tbody>
-      </table>
+    <div class="col-sm-12">
+      <div class="entries">
+        <table class="table table-bordered">
+          <thead>
+          <tr>
+            <th>Name</th>
+            <th>Details</th>
+            <th>Calories</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let entry of entries | calories:level">
+            <td>{{entry.name}}</td>
+            <td>{{entry.details}}</td>
+            <td>{{entry.calories}}</td>
+            <td class="transparent"><a href="#" (click)="editEntry(entry)"><i class="fa fa-pencil"></i> edit</a></td>
+          </tr>
+          <tr class="info">
+            <td colspan="2"><strong>Total</strong></td>
+            <td>{{sum(entries)}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+      <entry-update [selectedEntry]="selectedEntry" (clickSender)="finish()"></entry-update>
     </div>
-    <entry-update [selectedEntry]="selectedEntry" (clickSender)="finish()"></entry-update>
   </div>
 
   `
