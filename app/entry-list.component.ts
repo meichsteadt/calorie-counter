@@ -26,7 +26,7 @@ import { Entry } from './entry.model';
           <td>{{entry.name}}</td>
           <td>{{entry.details}}</td>
           <td>{{entry.calories}}</td>
-          <td class="transparent"><i class="fa fa-pencil"></i></td>
+          <td class="transparent"><a href="#" (click)="editEntry(entry)"><i class="fa fa-pencil"></i></a></td>
         </tr>
         <tr class="warning">
           <td colspan="2"><strong>Total</strong></td>
@@ -35,6 +35,7 @@ import { Entry } from './entry.model';
         </tbody>
       </table>
     </div>
+    <entry-update [selectedEntry]="selectedEntry" (clickSender)="finish()"></entry-update>
   </div>
 
   `
@@ -43,6 +44,7 @@ import { Entry } from './entry.model';
 export class EntryListComponent {
   @Input() entries: Entry[];
   level: string;
+  selectedEntry: Entry = null;
   filter(level) {
     this.level = level;
   }
@@ -53,5 +55,13 @@ export class EntryListComponent {
       sum+=entry.calories
     })
     return sum;
+  }
+
+  editEntry(entry) {
+    this.selectedEntry = entry;
+  }
+
+  finish() {
+    this.selectedEntry = null;
   }
 }
