@@ -26,6 +26,7 @@ import { Entry } from './entry.model';
           <td>{{entry.name}}</td>
           <td>{{entry.details}}</td>
           <td>{{entry.calories}}</td>
+          <td><i class="fa fa-pencil"></i></td>
         </tr>
         <tr class="warning">
           <td colspan="2"><strong>Total</strong></td>
