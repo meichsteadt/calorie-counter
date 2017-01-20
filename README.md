@@ -32,7 +32,7 @@ You will need the following things properly installed on your computer.
 ## Running / Development
 
 * `gulp serve`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
+* Visit your app at [http://localhost:3000](http://localhost:3000).
 
 ## Known Bugs
 
