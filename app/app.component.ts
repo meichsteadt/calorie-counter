@@ -8,6 +8,7 @@ import { Entry } from './entry.model'
       <h1 class="text-center">Caloreally? You're gonna eat that?</h1>
     </div>
     <entry-list [entries]="entries"></entry-list>
+    <new-entry [entries]="entries"></new-entry>
   </div>
   `
 })
