@@ -6,8 +6,7 @@ import { Entry } from './entry.model';
   template: `
   <div class="row">
     <select class="form-control" (change)='filter($event.target.value)'>
-      <option value="" disabled selected>Choose your option</option>
-      <option value="all">All</option>
+      <option value="all" selected>All</option>
       <option value="low">Low</option>
       <option value="high">High</option>
     </select>
@@ -42,9 +41,9 @@ import { Entry } from './entry.model';
 
 export class EntryListComponent {
   @Input() entries: Entry[];
-  level: number = 100000000000;
+  level: string;
   filter(level) {
-    ;
+    this.level = level;
   }
 
   sum(entries: Entry[]) {

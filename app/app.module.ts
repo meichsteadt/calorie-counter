@@ -5,7 +5,7 @@ import { AppComponent }   from './app.component';
 import { EntryListComponent } from './entry-list.component';
 import { EntryUpdateComponent } from './entry-update.component';
 import { NewEntryComponent } from './new-entry.component';
-import { CaloriePipe } from './calorie.pipe';
+import { CaloriesPipe } from './calories.pipe';
 
 @NgModule({
   imports: [ BrowserModule ],
@@ -14,7 +14,7 @@ import { CaloriePipe } from './calorie.pipe';
     EntryListComponent,
     EntryUpdateComponent,
     NewEntryComponent,
-    CaloriePipe
+    CaloriesPipe
    ],
   bootstrap:    [ AppComponent ]
 })
