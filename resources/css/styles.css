@@ -20,3 +20,7 @@ tbody > tr > td.transparent {
   background-color: #337ab7;
   color: #fff;
 }
+
+tbody > tr > td {
+  font-size: 20px;
+}

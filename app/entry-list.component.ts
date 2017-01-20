@@ -28,7 +28,7 @@ import { Entry } from './entry.model';
           <tr *ngFor="let entry of entries | calories:level">
             <td>{{entry.name}}</td>
             <td>{{entry.details}}</td>
-            <td>{{entry.calories}}</td>
+            <td [class]='colors(entry)'>{{entry.calories}}</td>
             <td class="transparent"><a href="#" (click)="editEntry(entry)"><i class="fa fa-pencil"></i> edit</a></td>
           </tr>
           <tr class="info">
@@ -67,5 +67,17 @@ export class EntryListComponent {
 
   finish() {
     this.selectedEntry = null;
+  }
+
+  colors(entry: Entry) {
+    if(entry.calories > 1200) {
+      return "text-danger";
+    }
+    else if (entry.calories < 800) {
+      return "text-success";
+    }
+    else {
+      return "";
+    }
   }
 }
