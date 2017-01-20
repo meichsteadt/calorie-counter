@@ -1,3 +1,12 @@
 select {
   margin-bottom: 30px;
 }
+
+tbody > tr > td.transparent {
+  border: none;
+  background-color: transparent;
+}
+
+.table-bordered {
+  border-right: none;
+}

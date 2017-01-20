@@ -13,7 +13,7 @@ import { Entry } from './entry.model';
   </div>
   <div class="row">
     <div class="entries">
-      <table class="table table-bordered table-striped">
+      <table class="table table-bordered">
         <thead>
         <tr>
           <th>Name</th>
@@ -26,7 +26,7 @@ import { Entry } from './entry.model';
           <td>{{entry.name}}</td>
           <td>{{entry.details}}</td>
           <td>{{entry.calories}}</td>
-          <td><i class="fa fa-pencil"></i></td>
+          <td class="transparent"><i class="fa fa-pencil"></i></td>
         </tr>
         <tr class="warning">
           <td colspan="2"><strong>Total</strong></td>
